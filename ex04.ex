@@ -39,7 +39,11 @@ defmodule Ex04 do
       [ 1, 2, 3, 4, 5 ]
 
   """
-  def reverse . . . "your code"
+  def reverse(x) do
+    reduce(x, [], fn (h, state) -> [h|state] end)
+  end
+
+
 
   ##############################################################################
   # 4.2:  5 points #
@@ -55,7 +59,14 @@ defmodule Ex04 do
 
   """
 
-  def min . . . "your code"
+  def min(x) do
+    reduce(x, fn n1, n2 ->
+        cond do
+          n1 < n2 -> n1
+          true -> n2
+        end
+      end)
+  end
 
   ##############################################################################
   # 4.3: 10 points #
@@ -75,7 +86,21 @@ defmodule Ex04 do
   return value will be the thing you have to manipulate.
   """
 
-  def even_odd . . . "your code"
+  def even_odd(x) do
+    evens = reduce(x, [], fn h, state ->
+      cond do
+        Integer.is_even(h) -> [ h | state ]
+        true -> state
+      end
+    end)
+    odds = reduce(x, [], fn h, state ->
+      cond do
+        Integer.is_odd(h) -> [ h | state ]
+        true -> state
+      end
+    end)
+    { reverse(evens), reverse(odds) }
+  end
 
 
 
@@ -98,4 +123,3 @@ defmodule TestEx04 do
   use ExUnit.Case
   doctest Ex04
 end
-

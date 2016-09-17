@@ -164,7 +164,19 @@ defmodule Ex03 do
   Think a little about a nice way to lay this code out.
   """
 
-  def won(_stuff), do: false
+  def won(board) do
+    case board do
+      {a, _, _, _, a, _, _, _, a} -> a
+      {_, _, a, _, a, _, a, _, _} -> a
+      {a, a, a, _, _, _, _, _, _} -> a
+      {_, _, _, a, a, a, _, _, _} -> a
+      {_, _, _, _, _, _, a, a, a} -> a
+      {a, _, _, a, _, _, a, _, _} -> a
+      {_, a, _, _, a, _, _, a, _} -> a
+      {_, _, a, _, _, a, _, _, a} -> a
+      _ -> false
+    end
+  end
 
 
   ###########################
