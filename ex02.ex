@@ -56,8 +56,7 @@ defmodule Ex02 do
   first2equal =
     fn
       ([ a, a | _tail ]) -> true
-      ([ _head | _tail ]) -> false
-      ([]) -> false
+      (_) -> false
     end
 
 
