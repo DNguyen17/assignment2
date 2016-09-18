@@ -1,5 +1,8 @@
 # Assignment 2
 
+Danh Nguyen
+40062026
+
 In this directory you'll find a set of files named `ex01.ex`,
 `ex02.ex`, and so on.
 

@@ -54,6 +54,7 @@ defmodule Ex03 do
   be used if needed.)
 
   """
+
   defp to_odd_even(int) do
     cond do
       Integer.is_even(int) -> :even
@@ -87,7 +88,7 @@ defmodule Ex03 do
 
   def list_contains([h|_t], val) when h == val, do: true
   def list_contains([h|t], val)  when h != val, do: list_contains(t, val)
-  def list_contains([], _val),                 do: false
+  def list_contains([], _val),                  do: false
 
 
 
@@ -166,14 +167,18 @@ defmodule Ex03 do
 
   def won(board) do
     case board do
+      # diagonal
       {a, _, _, _, a, _, _, _, a} -> a
       {_, _, a, _, a, _, a, _, _} -> a
+      # horizontal
       {a, a, a, _, _, _, _, _, _} -> a
       {_, _, _, a, a, a, _, _, _} -> a
       {_, _, _, _, _, _, a, a, a} -> a
+      #vertical
       {a, _, _, a, _, _, a, _, _} -> a
       {_, a, _, _, a, _, _, a, _} -> a
       {_, _, a, _, _, a, _, _, a} -> a
+      # none
       _ -> false
     end
   end

@@ -87,11 +87,8 @@ defmodule Ex01 do
   ########################################################################
 
   create_adder =
-    fn
-      (n1) ->
-        fn
-          (n2) -> n1 + n2
-        end
+    fn (n1) ->
+        fn (n2) -> n1 + n2 end
     end
 
   add_2  = create_adder.(2)

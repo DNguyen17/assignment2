@@ -87,18 +87,22 @@ defmodule Ex04 do
   """
 
   def even_odd(x) do
+    # filter evens
     evens = reduce(x, [], fn h, state ->
       cond do
         Integer.is_even(h) -> [ h | state ]
         true -> state
       end
     end)
+    
+    # filter odds
     odds = reduce(x, [], fn h, state ->
       cond do
         Integer.is_odd(h) -> [ h | state ]
         true -> state
       end
     end)
+
     { reverse(evens), reverse(odds) }
   end
 
